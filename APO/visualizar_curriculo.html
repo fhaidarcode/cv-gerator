@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Permite posicionar elementos filhos absolutamente */
+        }
+
+        .dados-pessoais {
+            margin-bottom: 20px;
+        }
+        
+
+        .objetivo,
+        .qualificacoes,
+        .experiencias {
+            margin-bottom: 20px;
+        }
+
+        .qualificacoes,
+        .experiencias {
+            white-space: pre-wrap; /* Permite quebras de linha */
+        }
+
+        .print-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .print-button button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .print-button button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Currículo</h1>
+
+    <section>
+
+        <div class="conteudo">
+            <div class="dados-pessoais">
+                <h2>Dados Pessoais</h2>
+                <p><b>Nome Completo:</b> <span id="nome"></span></p>
+                <p><b>Estado Civil:</b> <span id="estadocivil"></span></p>
+                <p><b>E-mail:</b> <span id="endemail"></span></p>
+                <p><b>Endereço:</b> <span id="endereco"></span></p>
+                <p><b>Idade:</b> <span id="idade"></span></p>
+                <p><b>Data de Nascimento:</b> <span id="dat"></span></p>
+                <p><b>Telefone:</b> <span id="telefone"></span></p>
+            </div>
+
+            <div class="objetivo">
+                <h2>Objetivo</h2>
+                <p id="objetivo"></p>
+            </div>
+
+            <div class="qualificacoes">
+                <h2>Formação Acadêmica</h2>
+                <p id="academicqualif"></p>
+            </div>
+
+            <div class="experiencias">
+                <h2>Experiências Profissionais</h2>
+                <p id="experiencias"></p>
+            </div>
+        </div>
+
+        <div class="print-button">
+            <button onclick="window.print()">Imprimir Currículo</button>
+        </div>
+    </section>
+
+    <script>
+        // Função para obter parâmetros da URL
+        function getParams() {
+            var params = {};
+            var queryString = window.location.search.substring(1);
+            var pairs = queryString.split('&');
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i].split('=');
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+            }
+            return params;
+        }
+
+        // Função para preencher os campos com os parâmetros da URL
+        function fillFields() {
+            var params = getParams();
+            document.getElementById('nome').textContent = params.nome || '';
+            document.getElementById('estadocivil').textContent = params.estadocivil || '';
+            document.getElementById('endemail').textContent = params.endemail || '';
+            document.getElementById('endereco').textContent = params.endereco || '';
+            document.getElementById('idade').textContent = params.idade || '';
+            document.getElementById('dat').textContent = params.dat || '';
+            document.getElementById('telefone').textContent = params.telefone || '';
+            document.getElementById('objetivo').textContent = params.objetivo || '';
+            document.getElementById('academicqualif').textContent = params.academicqualif || '';
+            document.getElementById('experiencias').textContent = params.experiencias || '';
+        }
+
+        // Preenche os campos ao carregar a página
+        fillFields();
+    </script>
+</body>
+</html>

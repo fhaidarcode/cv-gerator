@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D9D9D9;
+            min-height: 100vh; /* Altura mínima da viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #342F2F;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #666;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            flex: 1; /* Ocupa todo o espaço restante */
+            padding: 20px;
+            text-align: center;
+            overflow-y: auto; /* Permite rolagem vertical se o conteúdo exceder a altura */
+        }
+
+        footer {
+            background-color: #342F2F;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            z-index: 1000; /* Ajuste o z-index para garantir que o rodapé esteja acima do conteúdo */
+            margin-top: auto; /* Empurra o rodapé para a parte inferior da viewport */
+        }
+
+        .corpo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .lateral {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            background-color: #C2BABA;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical; /* Permite redimensionamento vertical */
+            min-height: 20px; /* Altura mínima do textarea */
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"], button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+      
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/2936/2936630.png" height="82px" width="82px">
+        <h1>Gerador de Currículos</h1>
+    </header>
+
+   <nav>
+    <a href="index.html">Página Inicial</a> |
+    <a href="como_usar.html">Como usar</a> |
+    <a href="contato.html">Contate-nos</a>
+</nav>
+
+    <title>Contate-nos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contate-nos - Gerador de Currículos</h1>
+    <p>
+        Alguma dúvida, crítica ou sugestão? Entre em contato:
+    </p>
+    <form action="#">
+    <label for="name">Nome:</label><br>
+      <textarea id="name" name="Nome:" rows="2" cols="20"></textarea><br>
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="6" cols="40"></textarea><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
