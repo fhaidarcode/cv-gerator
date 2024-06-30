@@ -6,7 +6,6 @@
     <title>Gerador de Currículos</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-           <form action="gerar_curriculo.php" method="post" target="_blank" enctype="multipart/form-data">
         .card-body {
             margin: 20px;
             padding: 10px;
@@ -165,7 +164,7 @@
         
         <div class="corpo">
             <div class="lateral">
-                <form id="curriculoForm" action="visualizar_curriculo.php" method="POST">
+                <form id="curriculoForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <p><b><i>FORMULÁRIO:</b></p></i>
                     <label for="nome">Nome Completo:</label><br/>
                     <input type="text" name="nome" placeholder="Digite seu nome completo" required><br>
@@ -237,7 +236,7 @@
                         });
                     </script>
 
-                    <input type="submit" value="Visualizar e Imprimir Currículo">
+                    <input type="submit" name="submit" value="Visualizar e Imprimir Currículo">
                 </form>
             </div>
         </div>
@@ -254,3 +253,23 @@
     </script>
 </body>
 </html>
+
+<?php
+// Processamento do formulário
+if (isset($_POST['submit'])) {
+    // Recupera os dados do formulário
+    $nome = $_POST['nome'];
+    $estadocivil = $_POST['estadocivil'];
+    $endemail = $_POST['endemail'];
+    $endereco = $_POST['endereco'];
+    $idade = $_POST['idade'];
+    $dat = $_POST['dat'];
+    $telefone = $_POST['telefone'];
+    $objetivo = $_POST['objetivo'];
+    $formacao = $_POST['formacao'];
+    $experiencia = $_POST['experiencia'];
+
+    // Aqui você pode processar os dados como desejar
+    // Por exemplo, exibir em uma nova página ou gerar um arquivo PDF
+}
+?>
