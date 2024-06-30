@@ -6,6 +6,7 @@
     <title>Gerador de Currículos</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+           <form action="gerar_curriculo.php" method="post" target="_blank" enctype="multipart/form-data">
         .card-body {
             margin: 20px;
             padding: 10px;
